@@ -1,0 +1,121 @@
+\section{Set Theory and Logic}
+
+\subsection{Fundamental Concepts}
+
+Here we introduce the ideas of set theory, and establish the basic terminology and notation. We also discuss some points of elementary logic.
+
+\subsubsection{Basic Notation}
+
+Commonly we shall use capital letters $A, B, \dots$ to denote \textbf{\uwave{set}}, and lowercase letters $a, b, \dots,$ to denote the \textbf{\uwave{elements}} belonging to these sets. If an element $a$ belongs to a set $A$, we  express this fact by the notation $a \in A$; for the contradiction, if $a$ does not belong to $A$, we express this fact by writing: $a \not\in A$. 
+
+The equality symbol $=$ is used throughout this note to mean \uwave{logical identity}. Thus, when we say $a = b$, we mean $a$ and $b$ are symbols for the same element. Similarly, if $a$ and $b$ are different elements, we write $a \neq b$.
+
+We say that $A$ is a \textbf{\uwave{subset}} if $B$ if every element of $A$ is also an element of $B$, denoted by $A \subset B$; ($\forall x \in A, x \in B$) Noting in this definition requires $A$ being different from $B$; in fact, \uline{if $A = B$, it is true that both $A \subset B$ and $B \subset A$.} If $A \subset B$ and $A$ is different from $B$, then, we say that $A$ is \textbf{\uwave{proper subset}} of $B$, denoted by $A \subseteq B$.\footnote{The relations $\subset$ and $\subseteq$ are called \textbf{\uwave{inclusion} and \uwave{proper inclusion}}, respectively.}
+
+\subsubsection{Operations with Sets}
+
+\paragraph{The Union of Sets and the meaning of "or"} Given two sets $A$ and $B$, one can form a set from them that consists of all the elements of $A$ together with all elements of $B$. This set is called \textbf{\uwave{the union}} of $A$ and $B$, is denoted by $A \cup B$. Formally, we define $A \cup B = \{x: x\in A, x \in B\}$. The union of two sets, means the elements of the new sets is from $A$, or from $B$, or from both $A$ and $B$.
+
+\paragraph{The Intersection of Sets, and the Empty Set} Given sets $A$ and $B$, another way one can form a set is to take the common part of $A$ and $B$. This set is called the \textbf{\uwave{intersection}} of $A$ and $B$ and is denoted by $A \cap B$. Formally, we define $A \cap B = \{x: x\in A \text{ and } x \in B\}$. If the set $A$ and $B$ has no common element, then we call the intersection of $A$ and $B$ is a \textbf{\uwave{empty set}}, $A \cap B = \varnothing$. We also express this fact by saying that $A$ and $B$ are \textbf{\uwave{disjoint}}.
+
+\paragraph{The Difference of Two Sets} There is one other operation on sets that is occasionally useful. it is the \textbf{\uwave{difference}} of two sets, denoted by $A - B$ or $A \backslash B$. It is defined as the set consisting of those elements of $A$ that are not in $B$. Formally, we define $A - B = A \backslash B = \{x: x\in A \text{ and } x \not\in B\}$
+
+% Definition of circles
+\def\firstcircle{(0,0) circle (1.1cm)}
+\def\secondcircle{(0:1.5cm) circle (1.1cm)}
+
+\colorlet{circle edge}{red!50}
+\colorlet{circle area}{red!20}
+
+\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+    outline/.style={draw=circle edge, thick}}
+
+\setlength{\parskip}{5mm}
+
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}[b]{0.25\textwidth}
+    \centering
+    \begin{tikzpicture}
+        \begin{scope}
+            \clip \firstcircle;
+            \fill[filled] \secondcircle;
+        \end{scope}
+        \draw[outline] \firstcircle node {$A$};
+        \draw[outline] \secondcircle node {$B$};
+        \node[anchor=south] at (current bounding box.north) {$A \cap B$};
+    \end{tikzpicture}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.25\textwidth}
+    \centering
+    % Set A or B
+    \begin{tikzpicture}
+        \draw[filled] \firstcircle node {$A$}
+                      \secondcircle node {$B$};
+        \node[anchor=south] at (current bounding box.north) {$A \cup B$};
+    \end{tikzpicture}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.25\textwidth}
+    \centering
+    % Set A but not B
+    \begin{tikzpicture}
+        \begin{scope}
+            \clip \firstcircle;
+            \draw[filled, even odd rule] \firstcircle node {$A$}
+                                         \secondcircle;
+        \end{scope}
+        \draw[outline] \firstcircle
+                       \secondcircle node {$B$};
+        \node[anchor=south] at (current bounding box.north) {$A \backslash B$};
+    \end{tikzpicture}
+    \end{subfigure}
+    \caption{Operations in Sets}
+    \label{fig:set_operations}
+\end{figure}
+
+\subsubsection{Rules of Set Theory}
+
+Given several sets, one may form new sets by applying the set-theoretic operations to them. As in algebra, one uses parentheses to indicate in what order the operations are to be performed. For example, $A \cup (B \cap C)$ denotes the union of the two set $A$ and $B \cap C$, while $(A \cup B) \cap C$ denotes the intersection of the two sets $A \cup B$ and $C$. Sometimes different combinations of operations lead to the same set, when that happens, one has a rule of set theory (which can be thought of as a ``distributive law" for the operations $\cup$ and $\cap$):
+\newpage
+\begin{enumerate}[itemsep=0pt,topsep=0pt]
+    \item $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
+    \item $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
+\end{enumerate}
+
+and \textbf{\uwave{DeMorgan's Law}}:
+\begin{enumerate}[itemsep=0pt,topsep=0pt]
+    \item $A \backslash (B\cup C) = (A \backslash B) \cap (A \backslash C)$
+    \item $A \backslash (B\cap C) = (A \backslash B) \cup (A \backslash C)$
+\end{enumerate}
+
+\subsubsection{Collections of Sets}
+
+The elements belonging to a set may be of any sort. One can consider the set of all even integers, and the set of all blue-eyed people in the world. Some of these are of limited mathematical interest. Can the set be elements of another sets? The answer is yes. We now have another way to form new sets from old ones. Given a set $A$, we can consider sets whose elements are subsets of $A$. In particular, \uwave{we can consider the set of all subsets of $A$.} This set is sometimes denoted by the symbol $\mathcal{P}(A)$ and is called the \textbf{\uwave{power set}} of $A$.\footnote{Why we can the collection of $A$'s subset a power set? If $A= \{a, b, c\}$, then $\mathcal{P}(A) = \{\varnothing, \{a\}, \{b\}, \{c\}, \{a, b\}, \{a, c\}, \{b, c\}, \{a, b, c\}\}$ contains $8$ elements, and $2^3 = 8$, thus, it is named as \textbf{power} set.}
+
+When we have \uline{a set whose elements are sets}, we shall often refer to it as a \textbf{\uwave{collection of sets}} and denoted it by a script letter such as $\mathcal{A}$ or $\mathcal{B}$. 
+
+Thus, if $A = \{a, b, c\}$, then $a$ is a element of $A$ ($a \in A$), $\{a\}$ is a subset of $A$ ($\{a\} \subset A$), $\{a\}$ is a element of $\mathcal{P}(A)$($\{a\} \in \mathcal{P}(A)$).
+
+\paragraph{Arbitrary Union and Intersections} We have already defined what we mean by the union and the intersection of two sets. There is no reason to limit ourselves to just two sets, for we can just as well form the union and intersection of arbitrarily many sets.
+
+\begin{enumerate}[itemsep=0pt]
+    \item Given a collection $\mathcal{A}$, the \textbf{\uwave{union}} of the elements of $\mathcal{A}$ is: $\bigcup_{A \in \mathcal{A}} A = \{x: x \in A \text{ for at least one } A \in \mathcal{A}\}$
+    \item Given a collection $\mathcal{A}$, the \textbf{\uwave{intersection}} of the elements of $\mathcal{A}$ is: $\bigcap_{A \in \mathcal{A}} A = \{x: x \in A \text{ for every } A \in \mathcal{A}\}$
+\end{enumerate}
+
+\subsubsection{Cartesian products}
+
+There is yet another way of forming new sets from old ones; it involves the notion of an ``ordered pair" of objects. When we are considering a point $(x, y) \in \mathbb{R}^2$, we are actually defining a ``ordered pair" of real number $(x, y)$. (In a more sophisticated treatment of geometry, the plane, is more likely to be defined as the set of all ordered pairs of real numbers)
+
+The notion of ordered pair carries over to general sets. Given two sets $A$ and $B$m we define their \textbf{\uwave{cartesian product}} $A \times B$ to be the set of all ordered pair $(a, b), \forall a \in A, \forall b \in B$. Formally, $A \times B = \{(a, b): a \in A, b \in B\}$.
+
+
+\subsection{Functions}
+
+
+
+
+
+\section{Topological Spaces and Continuous Functions}
+
+\section{Connectedness and Compactness}

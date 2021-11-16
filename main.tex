@@ -1,0 +1,98 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage{lecture}
+
+\title{Lecture Note: Introductory of Functional Analysis}
+\author{Terence, Junjie LIU$^1$\thanks{Author is a Mphil student in Probability Theory and Mathematical Statistics. Considered of my limited ability, mistakes are inevitable. Correction and suggestions are welcomed. This work is under the CC-BY-SA 4.0 International license \faCreativeCommons\ \faCreativeCommonsBy\ \faCreativeCommonsSa.} \\ \href{terencelau@uicstat.com}{terencelau@uicstat.com}}
+\date{$^1$ Department of Statistics, BNU-HKBU United International College, Zhuhai, China \\ Date of Final Compile: \today}
+
+\begin{document}
+
+\maketitle 
+
+\begin{abstract}
+\noindent Functional analysis is a rich subject because it combines two large branches of mathematic: the \textit{topological} branch concerns itself with convergence, continuity,
+connectivity, boundedness, etc.; and the \textit{algebraic} branch concerns itself with operations, groups, rings, vectors, etc. Since this is the introductory course on Functional Analysis, in this course, we mainly focus on these parts:
+
+    \begin{enumerate}
+        \item Some Preliminaries in Analysis
+        \item Metric space
+        \item Norm Space and Banach Space
+        \item Linear vector space, Linear Operator and Dual Space
+        \item Inner Product space and Hilbert Space
+    \end{enumerate}
+    
+\noindent Here are some reference books and lecture notes:
+    
+    \begin{enumerate}
+        \item Books\footnote{The highlighted implies ``highly recommended"}:
+        \begin{enumerate}
+            \item \textit{Tong Sun - Functional Analysis \cite{sun2010functional}}
+            \item \textit{Yisheng Huang - Functional Analysis An Introduction Second Edition \cite{huang2009functional}}
+            \item \textit{E. Kreyszig - Introductory Functional Analysis with Application \cite{kreyszig1978introductory}}
+            \item \textit{Joseph Muscat - \hl{Functional Analysis - An Introduction to metric Spaces, Hilbert Spaces, and Banach Algebras}\cite{muscat2014functional}}
+            \item \textit{Philippe G. Ciarlet - \hl{Linear and Nonlinear Functional Analysis with Applications}\cite{ciarlet2013linear}}
+            \item \textit{Terence Tao - \hl{Analysis}\cite{tao2009analysis}}
+            \item \textit{Matthew A. Pons - \hl{Real Analysis for the Undergraduate} \cite{pons2014real}}
+        \end{enumerate}
+        \item Notes:
+        \begin{enumerate}
+            \item \href{http://www.math.utah.edu/~tan/notes.html}{Mr. Chee Han Tan's note (PhD Candidate in Utah University)}
+            \item \href{http://math.wsu.edu/students/jstreipel/notes/functionalanalysis.pdf}{Mr. Jakob Streipel's Note (Doctoral student in Washington State University)} 
+            \item Dr.Man Wa HUI's Lecture note (BNU-HKBU UIC Course MATH7110 - Functional Analysis)
+            \item \href{https://www.math.cuhk.edu.hk/course_builder/2122/math4010/Functional\%20analysis\%202021-22a.pdf}{Prof. Chi Wai LEUNG's Lecture note} (The Chinese University of Hong Kong Course MATH4010 - Functional Analysis)
+        \end{enumerate}
+        %\item Videos:
+        %\begin{enumerate}
+        %    \item \href{https://www.youtube.com/playlist?list=PLBh2i93oe2qsGKD%OsuVVw-OCAfprrnGfr}{\textit{Functional Analysis} by The Right Side of %Mathematics}
+        %\end{enumerate}
+    \end{enumerate}
+    
+However, most of the Statistics undergraduate in BNU-HKBU United International College did not take the course of real analysis, only basic Multivariate Calculus, thus, there are multiple preliminary's knowledge missing. In this note, I am trying to fill the gap by covering the missing chapters and I highly recommend those students who enrol this course spend some time on Mathematical Analysis and Real Analysis, also, take some time to do the revision on Linear Algebra.
+
+As a guide, the notes and exercises have been marked as follows:
+
+\begin{enumerate}
+    \item[$\blacktriangleright$] refers to important notes and results, also \uwave{wave}, \uline{underline} or \hl{hightlight}.
+    \item[$*$] more advanced or difficult exercises that can be skipped on a first reading;
+    \item[$\diamondsuit$] side remarks that can be skipped without losing any essential ideas
+\end{enumerate}
+
+\noindent``数学当中最麻烦的事情就是显然，我觉得显然，你觉得不显然这就是最麻烦的事情了”\footnote{from article \href{https://zhuanlan.zhihu.com/p/38029151}{``选择公理与Zorn引理" by Diet Meat, posted in Zhihu}}
+
+\end{abstract}
+
+\newpage 
+
+\begin{multicols}{2}
+\tableofcontents 
+\listoftheorems[ignoreall,show=definition]
+\end{multicols}
+
+\newpage
+
+% part 1
+\part{Preliminaries}
+\include{context/part1}
+
+
+% part 2
+\part{Metric Space}
+\include{context/part2}
+
+
+\part{Banach and Hilbert Spaces}
+\include{context/part3}
+
+%part 4
+\part{Banache Algebra}
+\include{conext/part4}
+
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{sample}
+
+%\newpage
+
+%\newpage
+
+\end{document}
