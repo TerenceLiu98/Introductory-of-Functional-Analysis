@@ -1,10 +1,10 @@
 \section{Set Theory and Logic}
 
-\subsection{Fundamental Concepts}
+\subsection{Fundamental Concepts}\label{sec:fundamental_concepts}
 
 Here we introduce the ideas of set theory, and establish the basic terminology and notation. We also discuss some points of elementary logic.
 
-\subsubsection{Basic Notation}
+\subsubsection{Basic Notation}\label{sec:basic_notation}
 
 Commonly we shall use capital letters $A, B, \dots$ to denote \textbf{\uwave{set}}, and lowercase letters $a, b, \dots,$ to denote the \textbf{\uwave{elements}} belonging to these sets. If an element $a$ belongs to a set $A$, we  express this fact by the notation $a \in A$; for the contradiction, if $a$ does not belong to $A$, we express this fact by writing: $a \not\in A$. 
 
@@ -12,7 +12,7 @@ The equality symbol $=$ is used throughout this note to mean \uwave{logical iden
 
 We say that $A$ is a \textbf{\uwave{subset}} if $B$ if every element of $A$ is also an element of $B$, denoted by $A \subset B$; ($\forall x \in A, x \in B$) Noting in this definition requires $A$ being different from $B$; in fact, \uline{if $A = B$, it is true that both $A \subset B$ and $B \subset A$.} If $A \subset B$ and $A$ is different from $B$, then, we say that $A$ is \textbf{\uwave{proper subset}} of $B$, denoted by $A \subseteq B$.\footnote{The relations $\subset$ and $\subseteq$ are called \textbf{\uwave{inclusion} and \uwave{proper inclusion}}, respectively.}
 
-\subsubsection{Operations with Sets}
+\subsubsection{Operations with Sets}\label{sec:operations_with_sets}
 
 \paragraph{The Union of Sets and the meaning of "or"} Given two sets $A$ and $B$, one can form a set from them that consists of all the elements of $A$ together with all elements of $B$. This set is called \textbf{\uwave{the union}} of $A$ and $B$, is denoted by $A \cup B$. Formally, we define $A \cup B = \{x: x\in A, x \in B\}$. The union of two sets, means the elements of the new sets is from $A$, or from $B$, or from both $A$ and $B$.
 
@@ -73,7 +73,7 @@ We say that $A$ is a \textbf{\uwave{subset}} if $B$ if every element of $A$ is a
     \label{fig:set_operations}
 \end{figure}
 
-\subsubsection{Rules of Set Theory}
+\subsubsection{Rules of Set Theory}\label{sec:rules_of_set_theory}
 
 Given several sets, one may form new sets by applying the set-theoretic operations to them. As in algebra, one uses parentheses to indicate in what order the operations are to be performed. For example, $A \cup (B \cap C)$ denotes the union of the two set $A$ and $B \cap C$, while $(A \cup B) \cap C$ denotes the intersection of the two sets $A \cup B$ and $C$. Sometimes different combinations of operations lead to the same set, when that happens, one has a rule of set theory (which can be thought of as a ``distributive law" for the operations $\cup$ and $\cap$):
 \newpage
@@ -88,7 +88,7 @@ and \textbf{\uwave{DeMorgan's Law}}:
     \item $A \backslash (B\cap C) = (A \backslash B) \cup (A \backslash C)$
 \end{enumerate}
 
-\subsubsection{Collections of Sets}
+\subsubsection{Collections of Sets}\label{sec:collections_of_sets}
 
 The elements belonging to a set may be of any sort. One can consider the set of all even integers, and the set of all blue-eyed people in the world. Some of these are of limited mathematical interest. Can the set be elements of another sets? The answer is yes. We now have another way to form new sets from old ones. Given a set $A$, we can consider sets whose elements are subsets of $A$. In particular, \uwave{we can consider the set of all subsets of $A$.} This set is sometimes denoted by the symbol $\mathcal{P}(A)$ and is called the \textbf{\uwave{power set}} of $A$.\footnote{Why we can the collection of $A$'s subset a power set? If $A= \{a, b, c\}$, then $\mathcal{P}(A) = \{\varnothing, \{a\}, \{b\}, \{c\}, \{a, b\}, \{a, c\}, \{b, c\}, \{a, b, c\}\}$ contains $8$ elements, and $2^3 = 8$, thus, it is named as \textbf{power} set.}
 
@@ -103,14 +103,14 @@ Thus, if $A = \{a, b, c\}$, then $a$ is a element of $A$ ($a \in A$), $\{a\}$ is
     \item Given a collection $\mathcal{A}$, the \textbf{\uwave{intersection}} of the elements of $\mathcal{A}$ is: $\bigcap_{A \in \mathcal{A}} A = \{x: x \in A \text{ for every } A \in \mathcal{A}\}$
 \end{enumerate}
 
-\subsubsection{Cartesian products}
+\subsubsection{Cartesian products}\label{sec:cartesian_products}
 
-There is yet another way of forming new sets from old ones; it involves the notion of an ``ordered pair" of objects. When we are considering a point $(x, y) \in \mathbb{R}^2$, we are actually defining a ``ordered pair" of real number $(x, y)$. (In a more sophisticated treatment of geometry, the plane, is more likely to be defined as the set of all ordered pairs of real numbers)
+There is yet another way of forming new sets from old ones; it involves the notion of an ``ordered pair" of objects. When we are considering a point $(x, y) \in \R^2$, we are actually defining a ``ordered pair" of real number $(x, y)$. (In a more sophisticated treatment of geometry, the plane, is more likely to be defined as the set of all ordered pairs of real numbers)
 
 The notion of ordered pair carries over to general sets. Given two sets $A$ and $B$m we define their \textbf{\uwave{cartesian product}} $A \times B$ to be the set of all ordered pair $(a, b), \forall a \in A, \forall b \in B$. Formally, $A \times B = \{(a, b): a \in A, b \in B\}$.
 
 
-\subsection{Functions}
+\subsection{Functions}\label{sec:functions}
 
 A function is usually thought of as a \uwave{rule} that assigns to each element of a set $A$, an element of a set $B$, In calculus, a function is often given by a simple formula such as $f(x) = 3x^2 + 2$ or perhaps by a more complicated formula such as $f(x) = \sum_{i=1}^{\infty}x^i$.
 
@@ -225,9 +225,7 @@ A \textbf{\uwave{partition}} of a set $A$ is a collection of disjoint nonempty s
 
 Studying equivalence relations on a set $A$ and studying partitions of $A$ are really the same thing. Given any partition $\mathcal{D}$ of $A$, there is exactly one equivalence relation on $A$ from which it is derived.
 
-\paragraph{Order Relations}
-
-A relation $C$ on a set $A$ is called an \textbf{\uwave{order relation}} (or a \uwave{simple order}, or \uwave{linear order}) if it has the following properties:
+\paragraph{Order Relations} A relation $C$ on a set $A$ is called an \textbf{\uwave{order relation}} (or a \uwave{simple order}, or \uwave{linear order}) if it has the following properties:
 \begin{enumerate}[itemsep=0pt]
     \item (Comparability) For every $x$ and $y$ in $]A$ for which $x \not y$, either $xCy$ or $yCx$.
     \item (Nonreflexivity) For no $x$ in $A$ does the relation $xCx$ hold.
@@ -266,6 +264,79 @@ Similarly, we say that the subset of $A_0$ of $A$ is \textbf{bounded below} if t
 \begin{definition}
 An ordered set $A$ is said to have the \textbf{least upper bound property} if every nonempty subset $A_0$ of $A$ that is bounded above has a least upper bound. Analogously, the set $A$ is said to have the \textbf{\uwave{greatest lower bound property}} if every nonempty subset $A_0$ of $A$ that is bounded below has a greatest lower bound.
 \end{definition}
+
+\subsection{The Integers and the Real Numbers}\label{sec:the_integers_and_the_real_numbers}
+
+Up to now we have been discussing what might be called the logical foundations for our study - the elementary concepts of set theory. Now we turn to what we might call the mathematical foundation for our study - the integers and the real number system.  Real number system contains multiple axioms, in this section, we will introduce these axioms and indicate how the familiar properties of real numbers and the integers are derived from them.
+
+\begin{definition}[binary opration]
+A \textbf{\uwave{binary operation}} on a set $A$ is a function $f$ mapping $A \times A$ into $A$.
+\end{definition}
+
+When dealing with a binary operation $f$ on a set $A$, we usually use a notation different from the standard functional notation introduce in section \ref{sec:functions}. Instead of denoting the value of the function $f$ at the point $(a, a^{\prime})$ by $f(a, a^{\prime})$, we usually write the symbol for the function between the two coordinates of the point in question, writing the value of the function at $(a, a^{\prime})$ as $afa^{\prime}$. Furthermore (just as was the case with relations), it is more common to use some symbol other than a letter to denote an operation. Symbols often used are the plus symbol $+$, the multiplication symbols $\cdot$ and $\circ$, and the asterisk $*$; however, there are many others.
+
+\paragraph{Assumption} We assume there exists a set $\R$, called the set of \textbf{real numbers}, two binary operations $+$ and $\cdot$ on $\R$, called the addition and multiplication operations, respectively, and an order relation $<$ on $\R$, such that the following properties hold:
+
+\begin{enumerate}[itemsep=0pt]
+    \item Algebraic Properties
+    \begin{enumerate}[itemsep=0pt]
+        \item $(x + y) + z = x + (y + z)$
+        \item $(x \cdot y) \cdot z = x \cdot (y \cdot z)$ for all $x, y, z \in \R$
+    \end{enumerate}
+    \begin{enumerate}[itemsep=0pt]
+        \item $x + y = y + x$
+        \item $x \cdot y = y \cdot x$ for all $x, y \in \R$
+    \end{enumerate}
+    \begin{enumerate}[itemsep=0pt]
+        \item There exists a unique element of $\R$ called \textbf{zero}, denoted by $0$, such that $x + 0 = x$ for all $x \in \R$.
+        \item There exists a unique element of $\R$ called \textbf{one}, different from $0$ and denoted by $1$, such that $x \cdot 1 = x$ for all $x \in \R$.
+        \item For each $x$ in $\R$, there exists a unique $y$ in $\R$ such that $x + y = 0$.
+        \item For each $x$ in $\R$ different from $0$, there exists a unique $y$ in $\R$ such that $x \cdot y = 1$.
+        \item $x \cdot (y + z) = (x \cdot y) + (x \cdot z)$ for all $x, y, z\in \R$
+    \end{enumerate}
+    \item A Mixed Algebraic and Order Property
+    \begin{enumerate}[itemsep=0pt]
+        \item If $x > y$, then $x + z > y + z$
+        \item If $x > y$ and $z > 0$, then $x \cdot z > y \cdot z$
+    \end{enumerate}
+    \item Order Properties 
+    \begin{enumerate}[itemsep=0pt]
+        \item The order relation $<$ has the least upper bound property
+        \item If $x < y$, there exists an element $z$ such that $x < z$ and $z < y$.
+    \end{enumerate}
+\end{enumerate}
+
+From the properties of $1$ follow the familiar ``laws of algebra". Given $x$, we can find:
+\begin{enumerate}[itemsep=0pt]
+    \item \textbf{negative of $x$}: denotes by $-x$ such that $x + (-x) = 0$
+    \item \textbf{subtraction operation} by the formula $z - x = z + (-x)$
+    \item \textbf{reciprocal} is denoted by $\frac{1}{x}$
+    \item \textbf{quotient} is denoted by $\frac{z}{x} = z \cdot \frac{1}{x}$
+\end{enumerate}
+
+\begin{definition}[inductive and positive integers]
+A subset $A$ of the real numbers is said to be \textbf{\uwave{inductive}} if it contains the number $1$, and if for every $x \in A$, the number $x + 1$ is also in $A$. Let $\mathcal{A}$ be the collection of all inductive subsets of $\R$. Then the set $\Z_+$ of \textbf{\uwave{positive integers}} is defined by the equation $\Z_+ = \bigcap_{A \in \mathcal{A}} A$.
+\end{definition}
+
+Notice that the set $\R_+$ of positive real numbers is inductive, for it contains $1$ and the statement $x > 0$ implies the statement $x + 1 > 0$. Therefore, $\Z_+ \subset \R_+$, so the elements of $\Z_+$ are indeed positive, as the choice of terminology suggests. The basic properties of $\Z_+$, which follow readily from the definition, are the following:
+\begin{enumerate}[itemsep=0pt]
+    \item $\Z_+$ is inductive
+    \item (Principle of induction). If $A$ is an inductive set of positive integers, then $A = \Z_+$
+\end{enumerate}
+
+We define the set $\Z$ of \textbf{integers} to be the set consisting of the positive integers, $0$ and negative integers. We can easily prove that the sum, difference(subtraction), and product of two integers are integers, however, the quotient is not necessarily an integer. The set $\Q$ of quotient of integers is called the set of \textbf{rational numbers}.
+
+\begin{theorem}[Well-ordering property]
+Every nonempty subset of $\Z_+$ has a smallest element.
+\end{theorem}
+
+We will skip the proof.
+
+\begin{theorem}[Strong induction principle]
+Let $A$ be a set of positive integers. Suppose that for each positive integer $n$, the statement $S_n \subset A$\footnote{$S_n$ is a set of all integers less than $n$, formally, $S_n = \{1, 2, 3, \dots, n -1\}$} implies the state $n \in A$. Then $A = Z_+$
+\end{theorem}
+
+We will skip the proof.
 
 
 \section{Topological Spaces and Continuous Functions}
