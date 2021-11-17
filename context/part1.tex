@@ -182,8 +182,90 @@ Let $f: A \mapsto B$. If $A_0$ is a subset of $A$, we denote by $f(A_0)$ the set
 
 Note that if $f:A \mapsto B$ is a bijective and $B_0 \subset B$, then $B_0$ is the \uwave{image of $f$} and the \uwave{preimage of $f^{-1}$}. 
 
+\subsection{Relations}
 
+A more general concept of functions is the \textbf{relation}.
 
+\begin{definition}[relation]
+A \textbf{\uwave{relation}} on a set $A$ is a subset $C$ of the cartesian product $A \times A$.
+\end{definition}
+
+If $C$ is a relation on $A$, we use the notation $xCy$ to mean the same thing as $(x, y) \in C$. and we read it as ``$x$ in the relation $C$ to $y$".
+
+A rule of assignment $r$ for a function $f: A \mapsto A$ is also a subset of $A \times A$. But it is a subset of a very special kind: namely, one such that each element of $A$ appears as the first coordinate of an element of $r$ exactly once. Any subset of $A \times A$ is a relation on $A$.
+
+\paragraph{Equivalence Relations and Partitions} An \textbf{\uwave{equivalence relation}} on a st $A$ is a relation $C$ on $A$ having the following three properties:
+\begin{enumerate}[itemsep=0pt]
+    \item (Reflexivity) $xCx$ for every $x \in A$
+    \item (Symmetry) If $xCy$, then $yCx$
+    \item (Transitivity) If $xCy$ and $yCz$, then $xCz$
+\end{enumerate}
+
+There is no reason one must use a capital letter  - or indeed a letter of any sort - to denote a relation, even though it is a (ordered-pair) set. Another symbol will do just as well, One symbol that is frequently used to denoted an equivalence relation become 
+\begin{enumerate}[itemsep=0pt]
+    \item $x \sim x$ for every $x \in A$
+    \item If $x \sim y$, then $y \sim x$
+    \item If $x \sim y$ and $y \sim z$, then $x \sim z$
+\end{enumerate}
+
+Given an equivalence relation $\sim$ on $A$ and an element $x$ of $A$, we define a certain subset $E$ of $A$, called the \textbf{\uwave{equivalence class}} determined by $x$, by the equation $E = \{y: y \sim x\}$. Notice that the equivalence class $E$ determined by $x$ contains $x$, since $x \sim x$, The set $E$ have the following property:
+
+\begin{lemmad}
+Two equivalence classes $E$ and $E^{\prime}$ are either disjoint or equal.
+\end{lemmad}
+\begin{proof}
+Let $E$ be the equivalence class determined by $x$, correspondingly $E^{\prime}$ is the equivalence class determined by $x^{\prime}$. First we assume $E \cap E^{\prime} = \varnothing$, thus, they are disjoint; then we consider $E \cap E^{\prime} \neq \varnothing$, and assume the interception contains an element $y$. Since $y \in E$, thus, $y \sim x_i, \forall x_i \in E$. Similarly, $y \in E^{\prime}$, thus, $y \sim x^{\prime}_i, \forall x^{\prime}_i \in E^{\prime}$. With the property of transitivity, we can get $x \sim x^{\prime}$, thus, $E$ and $E^{\prime}$ are equal.
+\end{proof}
+
+Given an equivalence relation on a set $A$, let us denote by $\mathcal{E}$ the collection of all equivalence classes determined by this relation. The proceeding lemma shows that distinct element of $\mathcal{E}$ are disjoint. Furthermore, the union of the elements of $\mathcal{E}$ equals all of $A$ because every element of $A$ belongs to an equivalence class. The collection $\mathcal{E}$ is a particular example of what is called a \uwave{partition} of $A$:
+
+\begin{definition}[partition]
+A \textbf{\uwave{partition}} of a set $A$ is a collection of disjoint nonempty subset of $A$ whose union is all of $A$. Formally, $\bigcup_{E \in \mathcal{E}} E = A$.
+\end{definition}
+
+Studying equivalence relations on a set $A$ and studying partitions of $A$ are really the same thing. Given any partition $\mathcal{D}$ of $A$, there is exactly one equivalence relation on $A$ from which it is derived.
+
+\paragraph{Order Relations}
+
+A relation $C$ on a set $A$ is called an \textbf{\uwave{order relation}} (or a \uwave{simple order}, or \uwave{linear order}) if it has the following properties:
+\begin{enumerate}[itemsep=0pt]
+    \item (Comparability) For every $x$ and $y$ in $]A$ for which $x \not y$, either $xCy$ or $yCx$.
+    \item (Nonreflexivity) For no $x$ in $A$ does the relation $xCx$ hold.
+    \item (Transitivity) If $xCy$ and $yCz$, then $xCz$
+\end{enumerate}
+
+Note that the ``Comparability" does not by itself exclude the possibility that for some pair of elements $x$ and $y$ of $A$, both the relations $xCy$ and $yCx$ holds. But the ``Nonreflexivity" and ``Transitivity" combined do exclude this possibility; for if both $xCy$ and $yCx$ held, transitivity would imply that $xCx$, contradicting nonreflexivity.
+
+As the tilde, $\sim$, is the generic symbol for an equivalence relation, the ``less than" symbol, $<$, is commonly used to denote an order relation. Stated in this notation, we can rewrite the above three properties:
+\begin{enumerate}[itemsep=0pt]
+    \item (Comparability) If $x \neq y$, then either $x < y$ or $y < x$
+    \item (Nonreflexivity) If $x < y$, then $x \neq y$
+    \item (Transitivity) If $x < y$ and $y < z$, then $x < z$
+\end{enumerate}
+
+\begin{definition}
+If $(X, <)$ is a set with order relation, and if $a < b$, we use notation $(a, b)$ to denote the set $\{x: a < x < b\}$; it is called an \textbf{\uwave{open interval}} in $X$. If this set is empty, we call $a$ the \textbf{\uwave{immedia predecessor}} of $b$, and we call $b$ the \textbf{\uwave{immedia predecessor}} of $a$.
+\end{definition}
+
+\begin{definition}
+Suppose that $A$ and $B$ are two sets with order relations respectively. We say that two sets have the same \textbf{\uwave{order type}} if there is a bijective correspondence between them that preserves order; that is, if there exists a bijective function $f:A \mapsto B$ such that $a_1 <_A a_2 \Rightarrow f(a_1) <_B (a_2)$.
+\end{definition}
+
+\begin{definition}
+If $a_1 \leq_A a_2$, or if $a_1 - a_2$ and $b_1 <_B b_2$. It is called the \textbf{\uwave{dictionary order relation}} on $A \times B$. 
+\end{definition}
+
+With the order, we can do the comparison within the group. One example is the ``least upper bound property". One can define this property for an arbitrary ordered set. First, we need some preliminary definitions.
+
+Suppose that $A$ is a set ordered by the relation $<$. Let $A_0$ be a subset of $A$. We say that the element $b$ is the \textbf{largest element} of $A_0$ if $b \in A_0$ and if $x \leq b$ for every  $x \in A_0$. Similarly, we say that is the \textbf{smallest element} of $A_0$ if $a \in A_0$. It is easy to see that \uwave{a set has at most one largest element and at most one smallest elements.}
+
+We say that the subset $A_0$ of $A$ is \textbf{bounded above} if there is an element $b$ of $A$ such that $x \leq b$ for every $x \in A_0$; the element $b$ is called an \textbf{upper bound} of the subset $A_0$. If the set of all upper bound for $A_0$ has a smallest element, the element is called \textbf{the least upper bound}, or simply the \textbf{supremum}, of $A_0$. the supremum is denoted as $\sup{A_0}$;it may or may not belong to $A_0$. If it does, it is the largest element of $A_0$.
+
+Similarly, we say that the subset of $A_0$ of $A$ is \textbf{bounded below} if there is an element $b$ of $A$ such that $x \geq b$ for every $x \in A_0$; the element $b$ is called an \text{lower bound} of the subset $A_0$. If the set of all lower bound for $A_0$ has a largest element, the element is called \textbf{the greatest lower bound}, or the \textbf{infimum}, of the subset $A_0$. It is denoted by $\inf{A_0}$; it may or may not belong to $A_0$. If it does, it is the smallest element of $A_0$.
+
+\begin{definition}
+An ordered set $A$ is said to have the \textbf{least upper bound property} if every nonempty subset $A_0$ of $A$ that is bounded above has a least upper bound. Analogously, the set $A$ is said to have the \textbf{\uwave{greatest lower bound property}} if every nonempty subset $A_0$ of $A$ that is bounded below has a greatest lower bound.
+\end{definition}
 
 
 \section{Topological Spaces and Continuous Functions}
