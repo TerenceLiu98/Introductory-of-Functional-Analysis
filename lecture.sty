@@ -41,20 +41,21 @@
 \setlength\parindent{0pt}
 \usepackage{hyperref}
 
-\newtheoremstyle{Theorem}{}{}{\color{black}}{}{\color{blue!80}\bfseries}{}{ }{}
+\newtheoremstyle{Theorem}{}{}{\color{black}}{}{\color{black}\bfseries}{}{ }{}
 \theoremstyle{Theorem}
 \newtheorem{theorem}{Theorem}[section]
 
-\newtheoremstyle{Definition}{}{}{\color{black}}{}{\color{red!80}\bfseries}{}{ }{}
+\newtheoremstyle{Definition}{}{}{\color{black}}{}{\color{black}\bfseries}{}{ }{}
 \theoremstyle{Definition}
 \newtheorem{definition}{Definition}[section]
 
 \definecolor{amber}{rgb}{1.0, 0.75, 0.5}
-\newtheoremstyle{Proposition}{}{}{\color{black!75}}{}{\color{amber}\bfseries}{}{ }{}
+\newtheoremstyle{Proposition}{}{}{\color{black}}{}{\color{black}\bfseries}{}{ }{}
 \theoremstyle{Proposition}
 \newtheorem{proposition}{Proposition}[definition]
 \newtheorem{corollary}{Corollary}[theorem]
 \newtheorem{lemma}{Lemma}[theorem]
+\newtheorem{lemmad}{Lemma}[deifnition]
 \newtheorem{remark}{Remark}[theorem]
 \newtheorem{remarkd}{Remark}[definition]
 \definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}

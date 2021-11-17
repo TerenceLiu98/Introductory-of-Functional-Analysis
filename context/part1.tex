@@ -112,6 +112,76 @@ The notion of ordered pair carries over to general sets. Given two sets $A$ and 
 
 \subsection{Functions}
 
+A function is usually thought of as a \uwave{rule} that assigns to each element of a set $A$, an element of a set $B$, In calculus, a function is often given by a simple formula such as $f(x) = 3x^2 + 2$ or perhaps by a more complicated formula such as $f(x) = \sum_{i=1}^{\infty}x^i$.
+
+\begin{definition}[rule of assignment]
+\textbf{\uwave{A rule of assignment}} is a subset $r$ of the Cartesian product $C \times D$ of two sets, having the property that each element of $C$ appears as the firs coordinate of at most one ordered pair belonging to $r$.
+\end{definition}
+
+Thus, a subset $r$ of $C \times D$ is a rule of assignment if $[(c, d) \in r \text{ and } [c^{\prime}, d^{\prime}] \in r] \Rightarrow [d = d^{\prime}]$. We think of $r$ as a way of assigning, to the element $c$ of $C$, the element $d$ of $D$ for which $(c, d) \in r$.
+
+Given a rule of assignment $r$, the \textbf{\uwave{domain}} of $r$ is defined to be the subset of $C$ consisting of all first coordinates of elements of $r$, and the \textbf{\uwave{image set}} of $r$ is defined as the subset of $D$ consisting of all second coordinates of elements of $r$. Formally:
+\begin{enumerate}[itemsep=0pt]
+    \item domain $r= \{c: \text{ these exists } d \in D \text{ such that } (c, d) \ in r\}$
+    \item image $r = \{d: \text{ these exists } c \in C \text{ such that } (c, d) \ in r\}$
+\end{enumerate}
+
+Note that given a rule of assignment $r$, its domain and image are entirely determined.
+
+\begin{definition}[function]
+A \textbf{\uwave{function}} $f$ is a rule of assignment $r$, together with a set $B$ that contains the image set of $r$. The domain $A$ of the rule $r$ is also called the \textbf{domain} of function $f$; the image set of $r$ is also called the \textbf{image set} of $f$; and the set $B$ is called the \textbf{range} of $f$.\footnote{Analysts are apt to use the word ``range" to denote what we have called the ``image set" of $f$. They avoid giving the set $B$ a name.}
+
+If $f$ is a function having domain $A$ and range $B$, we express this fact by writing $f: A \mapsto B$, which is read ``$f$ is a function from $A$ to $B$.", or ``$f$ maps $A$ to $B$".
+\end{definition}
+
+\begin{definition}[resitriction]
+If $f: A \mapsto B$ and if $A_0$ is a subset of $A$, we define the \textbf{\uwave{restriction}} of $f$ to $A_0$ to be the function mapping $A_0$ into $B$ whose rule is $\{(a, f(a)) | a \in A_0\}$
+\end{definition}
+
+\begin{definition}[composite]
+Given functions $f:A \mapsto B$ and $g: B \mapsto C$, we define the \textbf{\uwave{composite}} $g \circ f$ of $f$ and $g$ as the function $g \circ f: A \mapsto C$ defined by the equation $(g \circ f)(a) = g(f(a)), a \in A$. Formally, $g \circ f: A \mapsto C$ is the function whose rule is $\{(a, c), \text{ for some } b\in B, f(a) = b \text{ and } g(b) = c\}$.
+\end{definition}
+
+Considering two physical movement: rotation and translation, if we first rotate a object and then do the translation, it is a kind of composite function $g \circ f$.
+
+\begin{figure}[htp]
+    \centering
+    \begin{tikzpicture}
+        % plots
+        \draw plot [smooth cycle] coordinates {(1.0,.1)(1.5,.2)(2.8,.5)(2.9,1.5)(2.8,2.8)(1.4,2.5)(0.5,0.5)} 
+                node[circle, fill=black, inner sep=1pt, label=below:$x$] (u) at (1.8,1.8) {};
+                \draw[fill=cyan!80, dashed, fill opacity=0.4] (1.8,1.8) circle (4pt);
+        \draw plot [smooth cycle] coordinates {(5,0.25) (6,0.35) (6.5, 0.2) (7,0.5) (7,1.65) (6.5,2.75) (5.8,2.75) (5.3,1.45) (4.8,0.85) } 
+                node[circle, fill=black, inner sep=1pt, label=below:$f(x)$] (x) at (6,1.7) {};
+                \draw[fill=orange!70, dashed, fill opacity=0.4] (6,1.7) circle (4pt);
+        \draw plot [smooth cycle] coordinates {(8,0.25) (9,0.15) (9.5, 0.2) (10,0.5) (9.5,1.65) (8.8,2.95) (8.4,2.45) (8.2,2.55) (7.8,0.95) } 
+                node[circle, fill=black, inner sep=1pt, label=below:$g(x)$] (z) at (9.1,1.9) {};
+                \draw[fill=orange!70, dashed, fill opacity=0.4] (9.1,1.9) circle (4pt);
+        \draw[-{Straight Barb[length=5pt,width=5pt]}, dashed] (u) edge[out=-20, in=160] node[above] {$f(\cdot)$} (x);
+                \draw[-{Straight Barb[length=5pt,width=5pt]}, dashed] (x) edge[out=-20, in=160] node[above] {$g(\cdot)$} (z);
+        \end{tikzpicture} 
+    \caption{$g \circ f$}
+    \label{fig:composite_map}
+\end{figure}
+
+\begin{definition}[injective, surjective, bijective]
+A function $f: A \mapsto B$ is said to be \textbf{\uwave{injective (or one-to one)}} if for each pair of distinct points of $A$, their images under $f$ are distinct. It is said to be \textbf{\uwave{surjective}} (or $f$ is said to map $A$ \textbf{onto} $B$) if every element of $B$ is the image of some element of $A$ under the function $f$. If $f$ is both \uwave{injective and surjective}, it is said to be \textbf{\uwave{bijective}} (or is called a \uwave{ono-to-one correspondence}).
+\end{definition}
+
+More formally, $f$ is \uwave{injective} if $[f(a) = f(a^{\prime})] \Rightarrow [a = a^{\prime}]$; $f$ is \uwave{surjective} if $[b \in B] \Rightarrow [b \in f(a) \text{ for at least one } a\in A]$
+
+If $f$ is bijective, there exists a function from $B$ to $A$ is called \textbf{\uwave{inverse}} of $f$, denoted by $f^{-1}$ and is defined by letting $f^{-1}(b), b \in B$ be that unique element $a \in A$ for which $f(a) = b$.
+
+\begin{lemmad}
+Let $f: A \mapsto B$. If there are functions $g: B \mapsto A$ and $g: B \mapsto A$ such that $g(f(a)) = a$ for every $a \in A$ and $f(h(b)) = b$ for $b \in B$, then $f$ is a bijective and $g = h = f^{-1}$.
+\end{lemmad}
+
+\begin{definition}[image and preimage of a subset]
+Let $f: A \mapsto B$. If $A_0$ is a subset of $A$, we denote by $f(A_0)$ the set of all images of point of $A_0$ under the function $f$; this set is called the \textbf{\uwave{image of $A_0$ under $f$}}. Formally, $f(A_0) = \{b: b = f(a) \text{ for at least one } a\in A_0\}$. O the other hand, if $B_0$ is a subset of $B$, we denote by $f^{-1}(B_0)$ the set of all element of $A$ whose images under $f$ lies in $B_0$; it is called the \textbf{\uwave{preimage}} of $B_0$ under $f$. Formally, $f^{-1}(B_0) = \{a: f(a) \in B_0\}$.
+\end{definition}
+
+Note that if $f:A \mapsto B$ is a bijective and $B_0 \subset B$, then $B_0$ is the \uwave{image of $f$} and the \uwave{preimage of $f^{-1}$}. 
+
 
 
 
