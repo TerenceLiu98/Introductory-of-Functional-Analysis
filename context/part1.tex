@@ -338,6 +338,35 @@ Let $A$ be a set of positive integers. Suppose that for each positive integer $n
 
 We will skip the proof.
 
+\subsection{Cartesian Products}
+
+We have already define the cartesian product with two sets: $A \times B$, now we introduce more general cartesian products.
+
+\begin{definition}[indexing function and index set]
+Let $\mathcal{A}$ be a nonempty collection of sets. An \textbf{indexing function} for $\mathcal{A}$ is a surjective function $f$ from some set $J$, called the \textbf{index set}, to $\mathcal{A}$. The collection $\mathcal{A}$, together with the index function $f$, is called an \textbf{indexed family of sets}. Given $\alpha \in J$, we shall denote the set $f(\alpha)$ to be the symbol $A_{\alpha}$, and we shall denote the indexed family itself by the symbol $\{A_\alpha\}_{\alpha \in J}$, which is read ``the family of all $A_{\alpha}$, as $\alpha$ ranges over $J$." Sometimes we can directly denote the indexed family as $\{A_{\alpha}\}$.
+\end{definition}
+
+Note that although an indexing function is required to be \uwave{surjective}, it is not required to be injective. It is entirely possible for $A_{\alpha}$ and $A_{\beta}$ to be the same set of $\mathcal{A}$, even though $\alpha \neq \beta$.
+
+One way in which indexing function are used is to give a new notation for arbitrary unions and intersections of sets. Suppose that $f: J \mapsto \mathcal{A}$ is an indexing function for $\mathcal{A}$; let $A_{\alpha}$ denote $f(\alpha)$. Then we define $\bigcup_{\alpha \in J} = \{x: \text{ for at least one } \alpha \in J, x \in A_{\alpha}\}$ and $\bigcap_{\alpha \in J} = \{x: \text{ for every } \alpha \in J, x \in A_{\alpha}\}$.
+
+Two especially useful index sets are the set $\{1, \dots, n\}$ and the set $\Z_+$. For these index sets, we introduce some special notation. If a collection of sets is index by the $\{1, \dots, n\}$, we denote the index family by the symbol $\{A_1, \dots, A_n\}$, and we denote the union and intersection as $A_1 \cup \dots \cup A_n$ and $A_1 \cap \dots \cap A_n$, respectively. For the usage of $\Z_+$, the index family will be denoted by the symbole $\{A_1, \dots, A_n, \dots\}$ and its union and intersection as $A_1 \cup \dots \cup A_n, \cup \dots$ and $A_1 \cap \dots \cap A_n \cap \dots$, respectively.
+
+\begin{definition}[$m$-tuple]
+Let $m$ be a positive integer. Given a set $X$, we define an \textbf{\uwave{$m$-tuple}} of elements of $X$ to be a function: $x: \{1, \dots, m\} \mapsto X$.
+\end{definition}
+
+If $x$ is an $m$-tuple, we often denote the value of $x$ at $i$ by the symbol $x_i$ rather than $x(i)$ and call it the $i$-th coordinate or $x$. And we often denote the function $x$ itself by the symbol $(x_1, \dots, x_m)$.
+
+Now let $\{A_1, \dots, A_m\}$ be a family of sets indexed with the set $\{1, \dots, m\}$. Let $X = A_1 \cup A_2 \cup \dots A_m$, and define the \textbf{\uwave{cartesian product}} of the indexed family, denoted by $\prod_{i = 1}^{m} A_i$ to be the set of all $m$-tuples $(x_1, \dots, x_m)$ of element of $X$, such that $x_i \in A_i$ for each $i$.
+
+\begin{definition}[$\omega$-tuple]
+Given a set $X$, we define an $\omega$-tuple of elements of $X$ to be a function $x: \Z_{+} \maps to X$; we also call such a function a \textbf{sequence}, or an \textbf{infinite sequence}, of element of $X$. If $x$ is an $\omega$-tuple, we often denote the value of $x$ at $i$ by $x_i$, and call it the $i$-th coordinate of $x$. 
+\end{definition}
+
+Now with the $\omega$-tuple, the \textbf{cartesian product} of the indexed family of sets, denoted by $\prod_{i \in \Z_+} A_i$ is defined to be the set of all $\omega$-tuples $(x_1, x_2, \dots)$ of elements of $X$ such that $x_i \in A_i$ for each $i$.
+
+
 
 \section{Topological Spaces and Continuous Functions}
 
