@@ -366,6 +366,106 @@ Given a set $X$, we define an $\omega$-tuple of elements of $X$ to be a function
 
 Now with the $\omega$-tuple, the \textbf{cartesian product} of the indexed family of sets, denoted by $\prod_{i \in \Z_+} A_i$ is defined to be the set of all $\omega$-tuples $(x_1, x_2, \dots)$ of elements of $X$ such that $x_i \in A_i$ for each $i$.
 
+\subsection{Finite Sets}
+
+Finite sets and infinite sets, countable sets and uncountable sets, these are types of sets that you may have encountered before. Nevertheless, we shall discuss them in this section and the next, not only to make sure you understand them thorughly, but also to elucidate some particular points of logic that will arise later on. First, we consider the finite sets.
+
+Re call that if $n$ is a positive integer, we use $S_n$ to denote the set of positive integers less than $n$; it is call a \textbf{section} of the positive integers. The sets $S_n$ are the prototypes for what we call the finite sets.
+
+\begin{definition}[finite set]
+A set is said to be \textbf{\uwave{finite}} if there is a bijective correspondence of $A$ with some section of the positive integers. That is, $A$ is finite if it is empty of if there is a bijection $f: A \mapsto \{1, \dots, n\}$
+\end{definition}
+
+To clarify the definition, if a set is \textbf{finite}, it has a finite number of elements. For a set $A$ contains $n$ elements, its \textbf{\uwave{cardinality}} is $n$.
+
+\begin{lemmad}
+Let $n$ be a positive integer. Let $A$ be a set; let $a_0$ be an element of $A$. Then there exists a bijective correspondence $f$ of the set $A$ with the set $\{1, \dots, n+1\}$ if and only if there exists a bijective correspondence $g$ of the set $A \backslash \{a_0\}$ with the set $\{1, \dots, n\}$.
+\end{lemmad}
+
+\begin{theorem}
+Let $A$ be a set; suppose there exists a bijection $f: A \mapsto \{1, \dots, n\}$ for some $n \in \Z_+$. Let $B$ be a proper subset of $A$. Then there exists no bijection $g: B \mapsto \{1, \dots, n\}$; however, there is a bijection $g: B \mapsto m$ where $m < n$ if $B \neq \varnothing$.
+\end{theorem}
+
+\begin{corollary}
+If $A$ is finite, there is no bijection of $A$ with a proper subset of itself
+\end{corollary}
+
+\begin{corollary}
+$\Z_+$ is not finite.
+\end{corollary}
+
+\begin{corollary}
+The cardinality of a finite set $A$ is uniquely determined by $A$.
+\end{corollary}
+
+\begin{corollary}
+If $B$ is a subset of the finite set $A$, then $B$ is finite. If $B$ is a proper subset of $A$, then the cardinality of $B$ is less than the cardinality of $A$.
+\end{corollary}
+
+\begin{corollary}
+Let $B$ be a nonempty set. Then the following are equivalent:
+\begin{enumerate}[itemsep=0pt]
+    \item $B$ is finite
+    \item There is a surjective function from a section of the positive integers onto $B$
+    \item There is an injective function from $B$ into a section of the positive integers
+\end{enumerate}
+\end{corollary}
+
+\begin{corollary}
+Finite unions and finite cartesian products of finite sets are finite.
+\end{corollary}
+
+\subsection{Countable and Uncountable Sets}
+
+Just as sections of the positive integers are the prototypes for the finite sets, the set of all the positive integers is the prototype for what we call the \textbf{countably infinite} sets. In this section, we shall study such set; we shall also construct some sets that are neither finite nor countably infinite. This study will lead us into a discussion of what we mean by the process of ``inductive definition".
+
+\begin{definition}[infinite and countably infinite]
+A set $A$ is said to be \textbf{\uwave{infinite}} if it is not finite. It is said to be \textbf{\uwave{countably infinite}} if there is a bijective correspondence $f:A \mapsto \Z_{+}$.
+\end{definition}
+
+\begin{definition}[countable and uncountable]
+A set is said to be \textbf{\uwave{countable}} if it is either finite or countable infinite. A set that is not countable is said to be \textbf{\uwave{uncountable}}.
+\end{definition}
+
+There is a very useful criterion for showing that a set is countable. It is the following:
+
+\begin{theorem}
+Let $B$ be a nonempty set. Then the following are equivalent:
+\begin{enumerate}[itemsep=0pt]
+    \item $B$ is countable
+    \item There a surjective function $f:\Z_+ \mapsto B$
+    \item There is an injective function $g: B \mapsto \Z_+$
+\end{enumerate}
+\end{theorem}
+
+\begin{lemmad}
+If $C$ is an infinite subset of $\Z_+$, then $C$ is countably infinite.
+\end{lemmad}
+
+\begin{corollary}
+A subset of a countable set is countable
+\end{corollary}
+
+\begin{corollary}
+The set $\Z_+ \times \Z_+$ is countably infinite
+\end{corollary}
+
+\begin{theorem}
+A countable union of countable sets is countable
+\end{theorem}
+
+\begin{theorem}
+A finite product of countable sets is countable
+\end{theorem}
+
+\begin{theorem}
+Let $X$ denote the two element set $\{0, 1\}$. Then the set $X^{\omega}$ is uncountable.
+\end{theorem}
+
+\begin{theorem}
+Let $A$ be a set, there is no injective map $f: \mathcal{P}(A) \mapsto A$ and there is no surjective map $g: A \mapsto \mathcal{P}(A)$
+\end{theorem}
+
 
 
 \section{Topological Spaces and Continuous Functions}

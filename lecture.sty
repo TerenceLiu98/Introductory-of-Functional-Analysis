@@ -34,33 +34,14 @@
 \setlength{\parskip}{0.5em}
 \renewcommand{\baselinestretch}{1}
 
-\usepackage{tikz}
-\usetikzlibrary{arrows, arrows.meta}
-\usetikzlibrary{calc,trees,positioning,arrows,fit,shapes,calc}
-\usepackage{wrapfig}
-\setlength\parindent{0pt}
-\usepackage{hyperref}
-
-\newtheoremstyle{Theorem}{}{}{\color{black}}{}{\color{black}\bfseries}{}{ }{}
-\theoremstyle{Theorem}
-\newtheorem{theorem}{Theorem}[section]
-
-\newtheoremstyle{Definition}{}{}{\color{black}}{}{\color{black}\bfseries}{}{ }{}
-\theoremstyle{Definition}
 \newtheorem{definition}{Definition}[section]
-
-\definecolor{amber}{rgb}{1.0, 0.75, 0.5}
-\newtheoremstyle{Proposition}{}{}{\color{black}}{}{\color{black}\bfseries}{}{ }{}
-\theoremstyle{Proposition}
-\newtheorem{proposition}{Proposition}[definition]
+\newtheorem{theorem}{Theorem}[definition]
+\newtheorem{proposition}{Proposition}[theorem]
 \newtheorem{corollary}{Corollary}[theorem]
 \newtheorem{lemma}{Lemma}[theorem]
 \newtheorem{lemmad}{Lemma}[definition]
 \newtheorem{remark}{Remark}[theorem]
 \newtheorem{remarkd}{Remark}[definition]
-\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
-\newtheoremstyle{Example}{}{}{\color{black}}{}{\color{airforceblue}\bfseries}{}{ }{}
-\theoremstyle{Example}
 \newtheorem{example}{Example}[section]
 
 \addto\captionsenglish{%
