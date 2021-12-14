@@ -1,0 +1,83 @@
+\section{Inner Product Space and Hilbert Space (Not finished)}
+
+\subsection{Basic Concept}
+
+\begin{definition}[\textbf{Inner Product, Inner Product Space}]\label{def:3.1}
+    Let $X$ be a vector space on $\Cc$, If a map $\spns{\cdot, \cdot}: X \times X \mapsto \Cc$ satisfies these properties:
+    \begin{enumerate}[itemsep=0pt, topsep=0pt]
+        \item For any $x \in X$, $\spns{x, x} \geq 0$ and the equality holds if and only if $x = 0$
+        \item For any $x, y, z \in X$, $\alpha, \beta \in \Cc$, $\spns{\alpha x + \beta y, z} = \alpha \spns{x, z} + \beta\spns{y, z}$
+        \item For any $x, y \in X$, $\spns{x, y} = \overline{\spns{y, x}}$ \marginpar{If $X$ is on $\R$, then $\spns{x, y} = \spns{y, x}$, $\overline{\spns{y, x}}$ is the complex conjugate.}
+    \end{enumerate}
+    Then we call $\spns{\cdot, \cdot}$ the \textbf{inner product}\index{inner product} on $X$, $(X, \spns{\cdot, \cdot})$ is called \textbf{inner product space}\index{inner product space}, $\spns{x, y}$ is called ``the inner product of $x$ and $y$".
+\end{definition}
+
+\begin{definition}[textbf{Hilbert Space}]\label{def:3.2}
+    Let $(X, \spns{\cdot, \cdot})$ be a inner product space, the inner product induces $\Norm{x} = \sqrt{\spns{x, x}}$ defined a norm on $X$, if $X$ is complete, then we call $(X, \Norm{\cdot} = \sqrt{\spns{\cdot, \cdot}})$ the \textbf{Hilbert Space}\index{hilbert space}
+\end{definition}
+
+\begin{definition}[\textbf{Orthogonal and Orthogonal Complement}]\label{def:3.3}
+    Let $X$ be a inner product space, $x, y \in X$, if $\spns{x, y} = 0$, then we call $x$ and $y$ are \textbf{orthogonal}\index{orthogonal}, denoted as $x \perp y$.
+    
+    Let $A$ and $B$ are two non-empty subset of $X$, if $x \perp y$ with any $x \in A$ $y \in B$, then we say $A$ and $B$ are \textbf{orthogonal}, denoted as $A \perp B$.
+    
+    We call $\{x \in X: x\perp y, y \in A\}$ as the \textbf{orthogonal complement} of $A$ in $X$, denoted as $A^{\perp}$.\marginpar{$0$ is ortogonal to any vector of $X$.}
+\end{definition}
+\begin{Remark}
+$\{0\}^{\perp} = X$, $X^{\perp} = \{0\}$
+\end{Remark}
+
+\begin{definition}[\textbf{Orthogonal Basis}]\label{def:3.4}
+    Let $X$ be a inner product space, $\{e_{\lambda}: \lambda \subset \Lambda\} \subset X$, if $\Norm{e_{\lambda}} = 1$, $\spns{e_{\lambda}, e_{\mu}} = 0$, $\lambda \neq \mu$, $\lambda, \mu \in \Lambda$,then we call $\{e_{\lambda}: \lambda \subset \Lambda\}$ a \textbf{orthogonal set}\index{orthonormal set}.
+    
+    If $\overline{\{e_{\lambda}: \lambda \subset \Lambda\}} = X$, then we call $\{e_{\lambda}: \lambda \subset \Lambda\}$ is a \textbf{orthonormal basis}.\marginpar{if $\Norm{e_{\lambda}} \neq 1$, the set is still a orthogonal basis, but not the orthonormal basis.}
+\end{definition}
+
+\begin{definition}\label{def:3.5}
+    Let $X$ and $Y$ be two inner product spaces, if $T: X \mapsto Y$ is a linear operator, then for any $x, y \in X$, we have:
+    \begin{equation*}
+        \spns{Tx, Ty} = \spns{x, y}
+    \end{equation*}
+    Then we call $X$ and $Y$ are isomorphic, $T$ is isometric from $X$ to $Y$.
+\end{definition}
+
+\subsection{Some Important Theorem and Proposition}
+
+\begin{theorem}[\textbf{Cauchy-Schwarz Inequality}]\index{cauchy-schwarz inequality}\label{thm:3.6}
+For all vector $x, y$ of an inner product space it is true that 
+\begin{equation*}
+    \begin{aligned}
+    \Abs{\spns{x, y}}^2 &\leq \spns{x, y} \cdot \spns{x, y}
+    \Rightarrow \Abs{\spns{x, y}} &\leq \Norm{x} \cdot \Norm{y} \quad \text{Since $\Norm{x}:= \sqrt{\spns{x, x}}$}
+    \end{aligned}
+\end{equation*}
+\end{theorem}
+\begin{Remark}
+Let $\varphi: X \times X \mapsto Y$ and satisfies this properties:
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item for any $x, y \in X$, $\varphi(x, x) \geq 0$; $\varphi(x, y) = \overline{\varphi(x, y)}$
+    \item for any $x, y, z \in X$ and $\alpha, \beta \in \K$, such that $\varphi(\alpha x + \beta y, z) = \alpha \varphi(x, z) + \beta \varphi(y, z)$ and for any $x, y \in X$, \uwave{we have $\Abs{\varphi(x, y)}^2 \leq \varphi(x,x)\varphi(y,y)$}
+\end{enumerate}
+\end{Remark}
+
+\begin{theorem}[\textbf{Law of Parallelogram, Polarization Identity}]\label{thm:3.7}
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item[]
+    \item $\Norm{x + y}^{2} + \Norm{x - y}^{2} = 2 \Norm{x}^2 + 2 \Norm{y}^2$ (Law of Parallelogram)\index{law of parallelogram} \marginpar{for real Hilbert space: $$\spns{x, y} = \frac{1}{4}\left(\Norm{x + y}^2 - \Norm{x - y}^2\right)$$ for complex Hilber space: $$\spns{x, y} = \frac{1}{4}\sum\limits_{k=0}^{3}\left(i^k\Norm{x + i^ky}^2\right)$$}
+    \item $\spns{x, y} = \Re{\spns{x, y}} + \Im{\spns{x, y}} = \left\{\begin{aligned}\Re{\spns{x, y}} &= \frac{1}{4}\left(\Norm{x + y}^2 - \Norm{x - y}^2\right) \\ \Im{\spns{x, y}} &= \frac{1}{4}\left(\Norm{x + iy}^2 - \Norm{x - iy}^2\right) \end{aligned}\right.$ (Polarization Identity)\index{polarization identity}
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[\textbf{Orthogonal Decomposition, Orthogonal Projection Operator}]\label{thm:3.8}
+Let $M$ be a closed subspace of a Hilbert space $X$, then for any $x \in X$, then 
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item $\left(Y^{\perp}\right)^{\perp} = Y^{\perp \perp} = Y$
+    \item $X = Y \bigoplus Y^{\perp}$, that for any $x \in X$, there exists a unique $y \in Y, z \in Y^{\perp}$, such that, $x = y + z$
+    \item Based on (2), we can define a operator $P$ as $Px = y$, and call $P$ is the \textbf{Orthogonal projection Operator}\index{orthogonal projection operator} with these properties:
+    \begin{enumerate}[itemsep=0pt, topsep=0pt]
+        \item $P^2 = P \circ P = P = P^{\star}$
+        \item $\Norm{P} = 1$, $\elR{P} = Y$, $\elR(I - R)= Y^{\perp}$
+    \end{enumerate}
+    
+\end{enumerate}
+\end{theorem}

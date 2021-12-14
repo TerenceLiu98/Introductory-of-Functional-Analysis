@@ -1,0 +1,60 @@
+\section{Bounded Linear Operator and Continuous Linear Functional}
+
+\subsection{Basic Concept}
+
+\begin{definition}[\textbf{Linear Operator}]\label{def:2.1}
+Let $X$ and $Y$ are two vector spaces, $D$ is a subspace of $X$, a map $T$, where $T: D \mapsto Y$ is called \textbf{linear operator}\index{linear operator} if
+\begin{equation*}
+    T(\alpha x + \beta y) = \alpha Tx + \beta Ty \quad \forall x, y \in D, \forall \alpha, \beta \in \K
+\end{equation*}
+We call $D$ is the \textbf{domain}\index{domain} of $T$, denoted as $\elD(T)$ and $TD$ is called \textbf{codomain}\index{codomain} of $T$, denoted as $\elR(T)$.
+
+When $Y = \K$, we call $T$ a \textbf{linear functional}.
+\end{definition}
+
+\begin{definition}[\textbf{Bounded Linear Operator, Unbounded Linear Operator}]\label{def:2.2}
+Let $X$ and $Y$ are two normed vector spaces, $T: \elD(T) \mapsto Y$ is a linear operator.
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item If there exists a $C > 0$, such that $\Norm{Tx} \leq C\Norm{x}$, then we call $T$ is a \textbf{bounded linear operator}\index{bounded linear operator}
+    \item For any $C^{\prime} > 0$, such that exists $x_0 \in X$, and $\Norm{Tx_0} \geq C^{\prime}\Norm{x_0}$, then we call $T$ is a \textbf{unbounded linear operator}\index{unbounded linear operator}
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[\textbf{Norm of Operator}]\label{def:2.3}
+Let $(X, \Norm{\cdot}_X)$ and $(Y, \Norm{\cdot}_Y)$ are two normed vector spaces, $T: \elD(T) \mapsto Y$ is a linear operator.
+\begin{equation*}
+    \Norm{T}_{X \to Y} = \sup\left\{ \frac{\Norm{Tx}_Y}{\Norm{x}_X}: x\in \elD(T) \backslash \{0\} \right\}
+\end{equation*}
+$\Norm{T}$ is called \textbf{the norm of operator}\index{operator norm}.
+\end{definition}
+
+\begin{definition}[\textbf{Bounded Linear Operator Space, Dual Space}]\label{def:2.4}
+Let $(X, \Norm{\cdot}_X)$ and $(Y, \Norm{\cdot}_Y)$ are two normed vector spaces in the field $\K$
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item We use $\elB(X, Y)$ to denote the space of all bounded linear operator from $X$ to $Y$, and $\elB(X) = \elB(X, X)$
+    \item If $Y = \K$, then we call $X^{\star} = \elB(X, \K)$ is the \textbf{dual space}\index{dual space} of $X$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[\textbf{Isomorphism}]\label{def:2.5}
+Let $(X, \Norm{\cdot}_X)$ and $(Y, \Norm{\cdot}_Y)$ are two normed vector spaces, for any $x \in X$, there is $\Norm{Tx}_Y = \Norm{x}_X$, we call $T$ is the \textbf{isometric operator}\index{isometric operator}; It $\elR(T) = Y$, then we call $T$ is \textbf{isomorphic}, and $X$ and $Y$ are isomorphic (\uwave{$X$ and $Y$ are equivalent}).
+\end{definition}
+
+\subsection{Some Important Theorem and Proposition}
+\begin{theorem}[\textbf{Continuity of Linear Operator}]\label{thm:2.6}
+Let $(X, \Norm{\cdot}_X)$ and $(Y, \Norm{\cdot}_Y)$ are two normed vector spaces, $T: X \to Y$ is a linear operator, then
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item $T$ is bounded $\Leftrightarrow$ $T$ is uniformly continuous $\Leftrightarrow$ $T$ is continuous on $x_0$
+    \item if $T$ is bounded, then $\ke(T)$ is a closed subspace
+    \item if $Y = \K$, then $T$ is bounded $\Leftrightarrow$ $\ke(T)$ is a closed subspace
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[\textbf{Properties of Operator Norm}]\label{thm:2.7}
+Let $(X, \Norm{\cdot}_X)$ and $(Y, \Norm{\cdot}_Y)$ are two normed vector spaces, $T$ is a bounded linear functional of from $\elD(T) \subset X$ to  $Y$, then 
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item For any $x \in \elD(T)$, we have $\Norm{Tx} \leq \Norm{T}\Norm{x}$
+    \item $\Norm{T} = \sup\limits_{x \in \elD(T), \Norm{x} = 1} \Norm{Tx} = \sup\limits_{x \in \elD(T), \Norm{x} \leq 1} \Norm{Tx}$
+\end{enumerate}
+\end{theorem}
+

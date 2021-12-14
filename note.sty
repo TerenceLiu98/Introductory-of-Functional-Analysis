@@ -1,0 +1,169 @@
+\usepackage[a4paper,right=2in, left=0.3in, top=0.5in, bottom=0.5in]{geometry}
+\usepackage{marginnote}
+\setlength{\marginparwidth}{4cm}
+\usepackage{enumitem}
+\usepackage[german,english]{babel}
+%\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm, thmtools}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xeCJK}
+\usepackage{color,soul}
+\usepackage{ulem}
+\usepackage{fontspec}
+\usepackage{mdframed}
+\usepackage{pxfonts}
+\usepackage{wasysym}
+\usepackage{framed}
+\usepackage{xcolor}
+\usepackage{makeidx}
+\usepackage{csquotes}
+\usepackage[pdfborder={0 0 0}]{hyperref}
+\usepackage{stmaryrd}
+\usepackage{titlesec}
+\titleformat{\paragraph}{\normalfont\itshape}{}{}{}
+
+% graph and figure with tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows, arrows.meta}
+\usetikzlibrary{calc,trees,positioning,arrows,fit,shapes,calc}
+
+\newcounter{lecref}[section]
+\numberwithin{lecref}{section}
+%\setcounter{lecref}{4}
+%\setcounter{section}{-1}
+
+\newtheoremstyle{break}
+  {\topsep}  % space above
+  {\topsep}  % space below
+  {\itshape} % Body font
+  {}         % Indent amount (empty = no indent, \parindent = para indent)
+  {\bfseries}% Thm head font
+  {.}        % Punctuation after thm head
+  {\newline}% Space after thm head: \newline = linebreak
+  {}        % Thm head spec
+
+\theoremstyle{break}\newtheorem{theorem}[lecref]{Theorem}
+\newtheorem*{Theorem}{Theorem}
+\newtheorem{example}[lecref]{Example}
+\newtheorem*{Example}{Example}
+\theoremstyle{break}\newtheorem{definition}[lecref]{Definition}
+\newtheorem*{Definition}{Definition}
+\newtheorem{lemma}[lecref]{Lemma}
+\newtheorem*{Lemma}{Lemma}
+\newtheorem{claim}[lecref]{Claim}
+\newtheorem*{Claim}{Claim}
+\newtheorem{remark}[lecref]{Remark}
+\newtheorem*{Remark}{Remark}
+\newtheorem{algorithm}[lecref]{Algorithm}
+\newtheorem*{Algorithm}{Algorithm}
+\newtheorem{corollary}[lecref]{Corollary}
+\newtheorem*{Corollary}{Corollary}
+\newtheorem{proposition}[lecref]{Proposition}
+\newtheorem*{Proposition}{Proposition}
+\newtheorem{revision}[lecref]{Revision}
+\newtheorem*{Revision}{Revision}
+
+\def\ifempty#1{\def\temp{#1} \ifx\temp\empty }
+
+% useful control sequences for mathematical notation
+\newcommand{\Abs}[1]{\left|#1\right|}
+\newcommand{\Set}[1]{\left\{#1\right\}}
+\newcommand{\SetDef}[2]{\left\{#1\,\mid\,#2\right\}}
+\newcommand{\IP}[2]{\left\langle#1, #2\right\rangle}
+\newcommand{\Norm}[1]{\left\|{\ifempty{#1}\cdot\else#1\fi}\right\|}
+\newcommand{\Max}[1]{\max{\Set{#1}}}
+\newcommand{\Min}[1]{\min{\Set{#1}}}
+\newcommand{\Sup}[1]{\sup{\Set{#1}}}
+\newcommand{\Powerset}[1]{{\mathbb P}(#1)}
+\newcommand{\IntRange}[2]{#1, \dots\ifempty{#2}\else, #2\fi}
+
+\def\vec2#1#2{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
+\def\vec3#1#2#3{\begin{pmatrix} #1 \\ #2 \\ #3 \end{pmatrix}}
+\newcommand{\noproof}[1]{A proof for Theorem~\ref{#1} is not provided.}
+\newcommand{\dotted}[1]{\:\dot{#1}\:}  % dot has too little margin
+
+% German translation
+\newcommand{\dt}[1]{(dt. \enquote{\foreignlanguage{german}{#1}})}
+
+% essential control sequences
+%% \xRightarrow: \xrightarrow for \rightarrow like \xRightarrow for \Rightarrow
+\makeatletter
+\newcommand{\xRightarrow}[2][]{\ext@arrow 0359\Rightarrowfill@{#1}{#2}}
+\makeatother
+
+% double \tilde
+\newcommand{\ttilde}[1]{\tilde{\raisebox{0pt}[0.85\height]{$\tilde{#1}$}}}
+
+% equality symbol with hat
+\usepackage{scalerel,stackengine}
+\newcommand\correspondsto{\mathrel{\stackon[1.5pt]{=}{\stretchto{%
+    \scalerel*[\widthof{=}]{\wedge}{\rule{1ex}{3ex}}}{0.5ex}}}}
+
+% weak* convergence
+\newcommand{\weaksc}{\overset*\rightharpoonup}  % dot has too little margin
+
+% set font 
+\usepackage{newtxmath}
+\setmainfont{TeX Gyre Pagella}
+\setsansfont{Droid Sans}
+\setmonofont{CMU Typewriter Text}
+
+% typesetting settings
+\parindent0pt
+\setlength{\parskip}{.6em}
+\DeclareMathOperator{\iso}{Iso}
+\DeclareMathOperator{\real}{Re}
+\DeclareMathOperator{\imagine}{Im}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\detm}{det}
+\DeclareMathOperator{\perm}{perm}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\degree}{deg}
+\DeclareMathOperator{\im}{image}
+\DeclareMathOperator{\ke}{kernel}
+\DeclareMathOperator{\spec}{spec}
+\DeclareMathOperator{\prop}{probability}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\argmax}{argmax}
+\DeclareMathOperator{\argmin}{argmin}
+\DeclareMathOperator{\vol}{vol} % volume
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\spn}{span}
+\newcommand{\spns}[1]{\langle#1\rangle} % span; also used for the "inner product"
+
+\usepackage{xargs}% Use more than one optional parameter in a new commands
+\usepackage{fontawesome5}
+\usepackage[colorinlistoftodos, prependcaption, textwidth=0.675\marginparwidth, textsize=tiny]{todonotes}
+\newcommandx{\improvement}[2][1=]{\todo[linecolor=red!50,backgroundcolor=red!20,bordercolor=red!50,#1]{#2}}
+
+
+\newcommand{\textbookref}[2]{%
+  \begin{mdframed}[backgroundcolor=gray!10,innerbottommargin=0pt,innertopmargin=0pt]
+    \paragraph{\textit{$\downarrow$Chapter #1. covers #2. in the texbook}}%
+  \end{mdframed}%
+}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Cc}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\elB}{\mathcal{B}}
+\newcommand{\elD}{\mathcal{D}}
+\newcommand{\elR}{\mathcal{R}}
+\newcommand{\elL}{\mathcal{L}}
+
+%vector 
+\newcommand{\avec}[1]{\mathbf{#1}}
+\newcommand{\basis}[2]{\mathbf{#1_1},\mathbf{#1_2},\dots,\mathbf{#1_{#2}}}
+\newcommand{\vecset}[2]{\{\mathbf{#1_1},\mathbf{#1_2},\dots,\mathbf{#1_{#2}}\}}
+\newcommand{\vecsetinf}[1]{\{\mathbf{#1_1},\mathbf{#1_2},\dots,\}}
+\newcommand{\alvecset}[2]{mathbf{#1_1},\mathbf{#1_2},\dots,\mathbf{#1_{#2}}}
+\newcommand{\veccombine}[3]{#1_1 #2_2 + #1_2 #2_2 + \dots #1_#3 #2_#3}
+\newcommand{\triple}[3]{(#1(#2_1), #1(#2_2), \dots, #1(#2_#3))}

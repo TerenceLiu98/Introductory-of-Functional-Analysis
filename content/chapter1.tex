@@ -1,0 +1,220 @@
+\section{Metric Space and Normed Space}\label{sec:ch1}
+
+\subsection{Basic Concept}\label{sec:ch1_1}
+
+\begin{definition}[\textbf{Metric, Metric Space}]\label{def:1.1}
+Let $X$ be a non-empty set, a map $d: X \times X \mapsto \R$ is called \textbf{metric}\index{metric} on $X$ if it satisfies these three properties:
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item $d(x, y) \geq 0$, and the equality holds if and only if  $x = y$
+    \item $d(x, y) = d(y, x)$ for all $x, y \in X$
+    \item $d(x, y) \leq d(x, z) + d(z, y)$ for all $x, y, z \in X$
+\end{enumerate}
+
+We call $(X, d)$ a \textbf{metric space}\index{metric space}.
+\end{definition}
+
+\begin{definition}[\textbf{Open ball, Close ball, Sphere and Sequence Convergence}]\label{def:1.2}
+Let $(X, d)$ be a metric space, $x_0 \in X$, $r > 0$
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item $B(x_0, r):=\{y \in X: d(x_0, y) < r\}$ is called an \textbf{open ball}\index{open ball} with the center at $x_0$ and radius $r$. \marginpar{we can also denote the open ball as metric ball, and use the notation as $B_r(x_0)$}
+    \item $\tilde{B}(x_0, r):=\{y \in X: d(x_0, y) \leq r\}$ is called an \textbf{closed ball}\index{closed ball} with the center at $x$ and radius $r$
+    \item $S(x, r):= \{y in M: d(y \in X: d(x_0, y) = r)\}$ is aclled the \textbf{Sphere}\index{sphere}
+    \item Let $\{x_n\}$ be a sequence in $X$, $x \in X$. We call $\{x_n\}$ converges to $x$ if for       any $\epsilon > 0$, there is a $N > 0$ exists, such that $x_n \in B(x, r)$, $n > N$,
+    denoted as $\lim\limits_{n\to\infty}d(x_n ,x) = 0$.
+ \end{enumerate}
+\end{definition}
+
+\begin{definition}[\textbf{Interior point, Exterior point, Boundary point}]\label{def:1.3}
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item[]
+    \item A point $x_0 \in E \subset X$ is called an \textbf{interior point in $E$}\index{interior point} if $\exists r \in \K$, such that, the open ball $B(x_0, r) \subset E$. \uwave{The set of all interior points of $E$ is denoted as $\mathring{E}$.}
+    \item A point $x_0 \in E \subset X$ is called an \textbf{exterior point in $E$}\index{exterior point} if $\exists r \in \K$, such that, the open ball$B(x_0, r) \cap S - E \neq \varnothing$.
+    \item A point $x_0 \in E \subset X$ is called an \textbf{boundary point in $E$}\index{boundary point} if $\exists r \in \K$, such that, the open ball $B(x_0, r) \cap E \neq \varnothing$ and $B(x_0, r) \cap X - E \neq \varnothing$. \marginpar{$X - E = X \backslash E$}\uwave{The set of all boundary points of $E$ is denoted as $\partial E$.}
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[\textbf{Isolated Point, Accumulation point}]\label{def:1.4}
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item[]
+    \item Let $E \subset (X, d)$, we call $x_0$ is an \textbf{isolated point}\index{isolated point} if exists $\delta > 0$ such that $B(x_0, \delta) \cap E = \{x_0\}$. Denoted as $\iso(E)$
+    \item A point $x \in M$ is called an \textbf{accumulation point}\index{accumulation point}(or \textbf{limit point}\index{limit point}) of $E$ if for any $\epsilon > 0$, there is an element $a \in E$ such that $0 < d(x, a) < \epsilon$, that is $B^{*}(x, \epsilon) \cap E \neq \varnothing$ for all $\epsilon > 0$.\marginpar{With this definition, we can find that both \textbf{interior point} and \textbf{boundary point} can be accumulation point} \uwave{The set of all accumulation points of $E$ is denoted as $E^{\prime}$.}
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[\textbf{Openset, Closed set, Closure}]\label{def:1.5}
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item[]
+    \item A non-empty subset $E$ of $X$ is called an \textbf{open set}\index{open set} if for any $x_0 \in E$, there exists a positive $r$ such that $B(x_0, r) \subset E$
+    \item A subset $E$ of $X$ is called a \textbf{closed set}\index{closed set} if its complement $X \backslash E$ is an open set.
+    \item The \textbf{closure}\index{closure} of $E$, denoted by $\bar{E}:=E\cup\{x \in X: x \text{ is an accumulation point of $E$}\}$, denoted as $\overline{E} = E \cup \partial E = \mathring{E} \cup \partial E = E^{\prime} \cup \iso(E)$\marginpar{$\left(\mathring{E}\right)^c = \overline{E^c}$ and $\left(\overline{E}\right)^c = \mathring{\left(E^c\right)}$}
+\end{enumerate}
+\end{definition}
+\begin{Remark}
+Here are some properties of open/closed set, suppose $E$ is non-empty subset of $X$:
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item $E$ is a open set $\Leftrightarrow$ $E^c$ is a closed set
+    \item If $\overline{E} = E$, then $E$ is a closed set $\Leftrightarrow$ $E^c$ is a open set $\Leftrightarrow$ $E^{\prime} \subset E$
+    \item for every $E_i (i \in \mathcal{I})$ is open, then $\bigcup\limits_{i\in \mathcal{I}} E_i$ is open, and $\bigcap\limits_{i\in \mathcal{I}^{\prime}} E_i$ is open\marginpar{where $\mathcal{I}$ is a \uwave{infinite index set}; $mathcal{I}^{\prime}$ is a \uwave{finite index set}}
+    \item for every $E_i (i \in \mathcal{I})$ is closed, then $\bigcap\limits_{i\in \mathcal{I}} E_i$ is closed, and $\bigcup\limits_{i\in \mathcal{I}^{\prime}} E_i$ is closed
+\end{enumerate}
+\end{Remark}
+
+\begin{definition}[\textbf{Dense set, Separable}]\label{def:1.6}
+    Let $E$ is a subset of a metric space $(X, d)$, if $\overline{E} = X$, then we call $E$ is a \textbf{dense set}\index{dense set} in $X$, which means for every $x \in X$, there exists $\{x_n\} \in E$, such that $x_n \to x$. If A metric space $X$ has a \uwave{countable dense subset}, then we call $X$ is \textbf{separable}\index{separable}.
+\end{definition}
+\begin{Remark}
+Many problems in functional analysis are discussed on the dense subset, then use the limit to expand the conclusion into the whole space.
+\end{Remark}
+
+\begin{definition}[\textbf{Compactness}]\label{def:1.7}
+    Let $E$ be a subset of a metric space $(X, d)$, assume that $\{U_{\lambda}: \lambda \in \Lambda\}$is any collection of open subset and $F \subset U_{\lambda}$. \uwave{If there exists $\lambda_1, \dots \lambda_s \in \Lambda$, such that $F \in \bigcup_{j=1}^{s} U_{\lambda_j}$}, then we call $F$ is a \textbf{compact set}\index{compactness}.
+    
+    Sometimes we call $\{U_{\lambda}: \lambda \in \Lambda\}$ as \textbf{open cover}\index{open cover}; and $\bigcup_{j=1}^{s} U_{\lambda_j}$ is called \textbf{finite subcover}\index{finite subcover}. Thus, \uwave{If $E$ is compect, i.e. every open covering of $X$ has a finite subcovering.}
+\end{definition}
+\begin{Remark}
+Here are some properties on the compact set, let $E$ be a compact subset of $(X, d)$,
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item $E$ is \uwave{bounded closed set} and \uwave{any closed subset of $E$ is compact}
+    \item \uwave{Every sequence of $X$ has a convergent subsequence.}
+    \item In $\R^n$, if $E \subset \R^n$, then ``$F$ is compact" $\Leftrightarrow$ $F$ is \uwave{closed and bounded}.
+\end{enumerate}
+\end{Remark}
+
+\begin{definition}[\textbf{Diameter of set, Boundedness}]\label{def:1.8}
+    Let $E$ be a subset of a metric space $(X, d)$, then 
+    $$\delta(E) = \sup\{d(x, y): x,y\in X\}$$
+    is denoted as the \textbf{diameter}\index{diameter} of $E$. If $\delta(E) < \infty$, then we call $E$ is a \textbf{bounded set}\index{boundedness} of $X$.
+\end{definition}
+
+\begin{definition}[\textbf{Continuous Mapping}]\label{def:1.9}
+    Let $(X, d)$, $(Y, \tilde{d})$ be two metric spaces, $T$ is a mapping from $X$ to $Y$, $x_0 \in X$. For any $\epsilon > 0$, exists $\delta > 0$, such that for any $x \in B(x_0, \delta)$ has $\tilde{d}(Tx, Tx_0) < \epsilon$, or equivalently, $B(x_0, \delta) \subset f^{-1}\left(B(Tx_0, \epsilon)\right)$, then we call $T$ is \textbf{continuous}\index{continuous} as $x_0$.
+    
+    If $T$ is continuous for all $x_i \in X$, then we call $T$ is a \textbf{continuous mapping} of $X$.
+\end{definition}
+
+\begin{definition}[\textbf{Isometry, Isomorphism, Contraction mapping}]\label{def:1.10}
+    Let $(X, d)$, $(\tilde{X}, \tilde{d})$ be two metric spaces, $T$ is a mapping from $X$ to $\tilde{X}$, if 
+    $$\tilde{d}(Tx, Ty) = d(x, y), \quad \text{ for any }x, y \in X$$
+    Then we call $T$ is \textbf{isometry}\index{isometry}; if $T$ is surjective, then it is \textbf{isomorphic}.\marginpar{Usually, if two metric space are ``isomorphism" then we may thinking they are equivalent; For two metrics, if exists $C^{\prime}, C \in \K \implies C^{\prime} d_1(x, y) \leq d_2(x, y) \leq C d_1(x, y)$, then $d_1$ and $d_2$ are equivalent.} If there is a $\alpha \in (0, 1)$, such that
+    $$\tilde{d}(Tx, Ty) \leq \alpha d(x, y), \quad \text{ for any }x, y \in X$$
+    then we call $T$ is \textbf{contraction mapping}\index{contraction mapping}
+\end{definition}
+
+\begin{definition}[\textbf{Cauchy sequence, Completeness}]\label{def:1.11}
+    Let $\{x_n\}$ be a sequence in the metric space $(X, d)$, if for all any $\epsilon > 0$, exists $N > 0$, such that \uwave{for any $n, m > N$, we have $d(x_n, x_m) < \epsilon$}, then, we call this sequence \textbf{Cauchy sequence}\index{cauchy sequence}.
+    
+    We say a metric space $(X, d)$ is \textbf{complete}\index{completeness} if every Cauchy sequence in $X$, denoted as $\{x_n^{(i)}\}$ converges to the point $x^{(i)} \in X$. 
+\end{definition}
+\begin{Remark}
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item[]
+    \item \uwave{Every convergent sequence is a Cauchy sequence; Cauchy sequence is bounded.}
+    \item If a Cauchy sequence $\{x_n\}$ has a subsequence $\{x_{n_m}\}$ converges to $x_0 \in X$, then the Cauchy sequence also converges to $x_0$.
+    \item A compact metric space if complete
+    \item The completeness of a metric space is correlated with the metric $d$, say $(X, d_1)$ is complete, there is no reason that induces $(X, d_2)$ is complete
+\end{enumerate}
+\end{Remark}
+
+\begin{definition}[\textbf{Linear Span}]\label{def:1.12}
+    Let $X$ be a vector space, $M$ is a nonempty subset of $X$. The set of linear combination of $M$ is called \uwave{the \textbf{span} of $M$}, denoted as $\spn{M} \text{ or } \spns{M}$. It is the smallest subset of $X$ that contains $M$. A subset $S$ is called the \textbf{spanning set}\index{spanning set} if $\spns{S} = X$.
+\end{definition}
+
+\begin{definition}[\textbf{Norm, Normed vector space, Banach Space}]\label{def:1.13}
+    Let $X$ be a vector space over a field $\K$, where $\K = \R$ or $\Cc$. A function $\Norm{\cdot}: X \mapsto \R$ satisfies these three properties:
+    \begin{enumerate}[itemsep=0pt, topsep=0pt]
+        \item $\Norm{x} \geq 0$ for any $x \in X$ and the equality holds if and only if $x = 0$
+        \item $\Norm{\alpha x} = \Abs{\alpha}\Norm{x}$ for any $x \in X$, $\alpha \in \K$
+        \item $\Norm{x + y} \leq \Norm{x} + \Norm{y}$
+    \end{enumerate}
+    The function $\Norm{\cdot}$ is called \textbf{Norm}\index{norm}, $(X, \Norm{\cdot})$ is called \textbf{Normed Vector Space}\index{normed vector space} \marginpar{Or, we can just it ``normed space"}, for $x \in X$, $\Norm{x}$ is called \uwave{norm of $x$}.
+    
+    If $(X, \Norm{\cdot})$ is complete, then we call this normed space is a \textbf{Banach space}.
+\end{definition}
+\begin{Remark}
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item[]
+    \item Let $(X, \Norm{\cdot})$ be a normed space. Define $d(x, y) = \Norm{x - y}$, where $d(x, y)$ can be
+          proved as a metric. This metric $d(x, y)$ is called \textbf{induced metric} of the norm $\Norm{\cdot}$. Thus, the normed space has all the properties of metric space.
+    \item For the properties of norm then we can find that for any $x, y \in X$, we have $\Abs{\Norm{x} -         \Norm{y}} \leq \Norm{x - y}$
+\end{enumerate}
+\end{Remark}
+
+\begin{definition}[\textbf{Isometric Isomorphism in Normed Space}]\label{def:1.14}
+Let $(X_1, \Norm{\cdot}_1)$ and $(X_, \Norm{\cdot}_2)$ are two normed space in the same field, then we call $\varphi$ is \textbf{isometric isomorphism} if the mapping $\varphi: X_1 \mapsto X_2$ satisfies: (Similar to the Def.\ref{def:1.10})
+    \begin{enumerate}[itemsep=0pt, topsep=0pt]
+        \item $\varphi(\alpha x + \beta y) = \alpha \varphi(x) + \beta \varphi(y)$ \quad for any $x, y \in X_1$ and $\alpha, \beta \in \K$
+        \item $c^{\prime} \Norm{\varphi(x)}_2 \leq \Norm{x}_1 \leq c \Norm{\varphi(x)}_2$ \quad for any $x \in X$ and $\exists c, c^{\prime} \in \K$
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[\textbf{Some Classical Banach Space}]\label{def:1.15}
+Notice: here are some classical banach space which are widely used in examples and test
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item \uwave{$\ell^{p} =\left\{\{x_n\}: \sum\limits_{n=1}^{\infty}\Abs{x_n}^p\right\} (1 \leq p < \infty)$}, with $p$-norm: $\Norm{\{x_n\}}_p = \left(\sum\limits_{n=1}^{\infty}(\Abs{x_n}^p\right)^{1/p}$
+    \item \uwave{$\ell^{\infty} =\left\{\{x_n\}: \sup\limits_{n\geq 1}\Abs{x_n} \right\} (1 \leq p < \infty)$}, with $\infty$-norm: $\Norm{\{x_n\}}_{\infty} = \sup\limits_{n \geq 1} \Abs{x_n}$
+    \item \uwave{$c_0= \left\{\{x_n\}: \lim\limits_{n \to \infty}\Abs{x_n} = 0\right\}$}, the norm of $c_0$: $\Norm{\{x_n\}} = \sup\limits_{n \geq 1} \Abs{x_n}$
+    \item \uwave{$\elL^p[a, b] = \left\{f: f(t) \text{ is measurable in $[a, b]$}\right\}$}, the norm of $\elL^p[a, b]$ ($p$-norm): $$\Norm{f}_p = \left(\int_{a}^{b} \Abs{f(t)}^p dt \right)^{1/p} \quad (1 \leq p \infty)$$
+    \item \uwave{$C[a, b]= \left\{f: f(t) \text{ is continuous in $[a, b]$}\right\}$}, $\Norm{f} = \max\limits_{a\leq t \leq b} \Abs{f(t)}$
+\end{enumerate}
+\end{definition}
+
+\subsection{Some Important Theorem and Proposition}
+\begin{theorem}[\textbf{Continuity of Mapping}]\label{thm:1.16}
+Let $T$ be a mapping from metric space $(X, d)$ to metric space $(Y, \tilde{d})$, then
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item $T$ is continuous at $x_0 \in X$ if and only if there is a sequence $\{x_n\} \subset X$ converges to $x_0$, such that $\tilde{d}(Tx_n, Tx_0) \to 0$ or $Tx_n \to Tx_0$ ($n \to \infty$)
+    \item $T$ is continuous at $X$ if and only if every open/closed set of $Y$'s preimage is also open/closed ($E \subset Y$ is open/closed, $T^{-1}E$ is open/closed.)
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[\textbf{Completeness of Subspace}]\label{thm:1.17}
+A subset $E$ of a complete metric space $X$ is also complete if and only if $E$ is a closed subset. 
+\end{theorem}
+
+\begin{theorem}[\textbf{Completeness of Metric Space}]\label{thm:1.18}
+Let $(X, d)$ be a metric space,then there must be a complete metric space $(\tilde{X}, \tilde{d})$ such that $X$ is isometric isomorphic to a dense subset of $\tilde{X}$. This dense subset is also unique. If there is another complete $(\hat{X}, \hat{d})$, and $X$ is isometric isomorphic to a dense subset of $(\hat{X}, \hat{d})$, then $(\tilde{X}, \tilde{d})$ is isometric isomorphic to $(\hat{X}, \hat{d})$.
+\end{theorem}
+
+\begin{theorem}[\textbf{Banach Fixed Point Theorem}]\label{thm:1.19}
+Let $(X, d)$ be a complete metric space, $T$ is a contraction mapping from $X$ to $X$, then there exists a $\alpha \in (0, 1)$ such that  
+\begin{equation*}
+    d(Tx, Ty) \leq \alpha d(x, y) \quad \text{ for any } x, y \in X
+\end{equation*}
+and \uwave{there is exists a unique $x^{\star}$ such that $Tx^{\star} = x^{\star}$}; Furthermore, $x^{\star}$ can be found as follows: start with any arbitrary $x_0 \in X$ and define a sequence $(x_n)_{n \in \N}$ by $x_n = T(x_{n-1})$. Then $\lim\limits_{n \to \infty} x_n = x^{\star}$.
+\end{theorem}
+
+\begin{theorem}[\textbf{H\"{o}lder Inequality}]\label{thm:1.20}
+Let $p > 1$ and $\frac{1}{p} + \frac{1}{q} = 1$
+\begin{equation}
+    \begin{aligned}
+        \sum_{n=1}^{\infty}\Abs{x_n y_n} &\leq \left(\sum_{n=1}^{\infty}\Abs{x_n}^p\right)^{1/p} \left(\sum_{n=1}^{\infty}\Abs{y_n}^q\right)^{1/q} \quad &\text{(if $\{x_n\}, \{y_n\} \in \K^n$)}\\
+        \int_{a}^{b} \Abs{f(t) g(t)} dt &\leq \left(\int_{a}^{b} \Abs{f(t)}^p dt\right)^{1/p} \left(\int_{a}^{b} \Abs{g(t)}^q dt\right)^{1/q} \quad &\text{(if $f(\cdot),g(\cdot) \in [a, b]$ are measurable)}
+    \end{aligned}
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[\textbf{Minkowski Inequality}]\label{thm:1.21}
+Let $p > 1$ and $\frac{1}{p} + \frac{1}{q} = 1$
+\begin{equation}
+    \begin{aligned}
+        \sum_{n=1}^{\infty}\Abs{x_n + y_n} &\leq \left(\sum_{n=1}^{\infty}\Abs{x_n}^p\right)^{1/p} + \left(\sum_{n=1}^{\infty}\Abs{y_n}^q\right)^{1/q} \quad &\text{(if $\{x_n\}, \{y_n\} \in \K^n$)}\\
+        \int_{a}^{b} \Abs{f(t) + g(t)} dt &\leq \left(\int_{a}^{b} \Abs{f(t)}^p dt\right)^{1/p} + \left(\int_{a}^{b} \Abs{g(t)}^q dt\right)^{1/q} \quad &\text{(if $f(\cdot),g(\cdot) \in [a, b]$ are measurable)}
+    \end{aligned}
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[\textbf{Properties of Finite Normed Space}]\label{thm:1.22}
+Let $X$ be a $n$ dimensional normed space on the field $\K$. 
+\begin{enumerate}[itemsep=0pt, topsep=0pt]
+    \item Let $\{e_1, \dots, e_n\}$ be a set of basis of $X$ there exists $M, M^{\prime} > 0$, such that 
+          \begin{equation*}
+              M \Norm{\sum\limits_{i=1}^{n} \xi_i e_i} \leq \Norm{\sum\limits_{i=1}^{n} \Abs{\xi_i}^2}^{1/2} \leq M^{\prime}\Norm{\sum\limits_{i=1}^{n} \eta_i e_i}
+          \end{equation*}
+          where $\xi_1, \dots, \xi_n \in \K$.
+    \item Let $\Norm{\cdot}_1$ and $\Norm{\cdot}_2$ are two norm on $X$, there exists $K, K^{\prime} > 0$       such that 
+          \begin{equation*}
+              K \Norm{x}_1 \leq \Norm{x}_2 \leq K^{\prime}\Norm{x}_1
+          \end{equation*}
+    \item $X$ is isomorphic with $\K^n$, and $X$ and $X^{\prime}$ are also isomorphic is they have same dimension.
+\end{enumerate}
+\end{theorem}
